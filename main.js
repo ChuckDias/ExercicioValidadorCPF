@@ -4,7 +4,7 @@ const campoFormulario = document.querySelectorAll("[required]");
 
  campoFormulario.forEach((campo) => {
     
-    campo.addEventListener ("click", () => validaCampo(campo));
+    campo.addEventListener ("blur", () => validaCampo(campo));
     
  })
 
