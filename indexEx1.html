@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 Validando formulários com Java</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <section class="formulario">
+        <div class="formulario-container">
+            <h2>Preencha os campos abaixo para testar o formulário.</h2>
+        </div>
+        <form class="formulario_exercicios" data-formulario>
+            <fieldset class="formulario__campo">
+                <lable class="campo-etiqueta" for="nome">Nome</lable>
+                <input name="nome" id="nome" class="campo-escrita" type="text" minlength="5" required>
+            </fieldset>
+            <fieldset class="formulario__campo">
+                <lable class="campo-etiqueta" for="email">E-mail</lable>
+                <input name="email" id="email" class="campo-escrita" type="email" minlength="5" required>
+            </fieldset>
+            <fieldset class="formulario__campo">
+                <lable class="campo-etiqueta" for="cpf">CPF</lable>
+                <input class="cpf" id="cpf" class="campo-escrita" type="text" minlength="11" maxlength="14" required pattern="d{3}\.?\d{3}\.?\d{3}-?\d{2}">
+            </fieldset>
+            <fieldset class="formulario__campo">
+                <lable class="campo-escrita" for="senha">Crie sua senha aqui (Essa deve conter caractere especial, letras maiúsculas, letras minúsculas e números. Minimo de 8 caracteres e máximo de 12)</lable>
+                <input name="senha" id="senha" class="campo-escrita" type="password" minlength="8" maxlength="12" required>
+            </fieldset>
+            <fieldset class="formulario__Campo">
+                <lable class="campo-escrita" for="data-nasc">Data de Nascimento</lable>
+                <input name="data-nasc" id="data-nasc" class="campo-escrita" type="date" required>
+            </fieldset>
+            <fieldset class="formulario__campo">
+                <input name="termos" id="termos" class="campo-escrita" type="checkbox" required>
+                <p class="termos__texto">Li e estou ciente quanto às condições de tratamento dos meus dados conforme
+                    descrito na Política
+                    de
+                    Privacidade do banco.</p>
+            </fieldset>
+            <div>
+                <input value="Avançar" class="formulario__botao" id="enviar" data-botao-enviar type="submit">
+                <span class="mensagem-erro"></span>
+            </div>
+        </form>
+    </section>
+
+<script src="./main.js" type="module"></script>
+</body>
+</html>
+
+<!-- 1) Validando formulários com HTML5
+Imagine que você foi contratado para desenvolver uma página de cadastro para um novo serviço de streaming. A ideia é criar um formulário simples e intuitivo que valide as informações do usuário antes de serem enviadas ao servidor, garantindo que todos os dados sejam coletados corretamente. Seu desafio é utilizar HTML5 para criar esse formulário, implementando validações para os campos de nome, e-mail, CPF, data de nascimento e concordância com os termos de serviço, semelhante ao que foi descrito para o Monibank. Adicione também um campo para senha, exigindo caracteres especiais, números e letras maiúsculas e minúsculas, aumentando a segurança do usuário. -->
+
+<!-- 2) Aprimorando o formulário de cadastro
+Você está desenvolvendo o site do MoniBank, uma inovadora agência bancária virtual, e precisa implementar um formulário de cadastro para novos usuários. Utilize os conceitos de minLength, maxLength, e tipos de input específicos para cada campo, garantindo que os dados inseridos pelos usuários atendam aos requisitos de segurança e validação do banco. Os campos do formulário devem ser preenchidos na seguinte ordem:
+Nome; E-mail; CPF; Senha; Data de nascimento; Aceite dos termos e condições e um botão para enviar o formulário. -->
+
+
+<!-- 3) Implementando validações essenciais em um formulário de cadastro
+Para garantir que todas as inscrições sejam preenchidas de maneira completa e correta, você precisa implementar, no formulário de cadastro, a exigência do preenchimento de todos os campos antes da submissão. Utilize o atributo required para assegurar que campos como nome, e-mail, identificação (podendo ser comparado ao RG), data de nascimento, e concordância com os termos e condições sejam obrigatoriamente preenchidos. Adicionalmente, inclua um botão de envio que só permita a conclusão do cadastro com todos os campos devidamente preenchidos. -->
+
+<!-- 1) Validando CPF com Expressão Regular
+Uma das funcionalidades do portal é o cadastro de usuários, no qual o CPF é um dos campos mais importantes para confirmar a identidade dos clientes. Seu desafio é criar um campo de formulário para a entrada do CPF que valide o formato deste documento (com e sem pontuação), utilizando uma expressão regular (Regex) para essa validação. Esse campo deve aceitar CPFs formatados (ex.: 000.000.000-00) e não formatados (ex.: 00000000000), garantindo flexibilidade no preenchimento sem comprometer a precisão da informação. -->
+
+<!-- 2) Verificando a validade do CPF
+Sua próxima tarefa é criar um script JavaScript que valide o CPF inserido no campo de formulário correspondente. O script deve verificar se o CPF é válido, seguindo os padrões brasileiros, incluindo a verificação de dígitos verificadores e a não aceitação de sequências numéricas repetitivas. -->
